@@ -1,0 +1,1 @@
+{"id":"4a444fe5-bae4-4ca2-935e-74e9482024cd","name":"DEV","values":[{"key":"ota-basepath","value":"https://backend-rest-api-service-dev.up.railway.app/api","enabled":true,"type":"default"}]}

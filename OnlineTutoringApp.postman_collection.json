@@ -1,0 +1,289 @@
+{
+	"info": {
+		"_postman_id": "ae5d418c-d22e-46cc-af03-e2c149ea954a",
+		"name": "OnlineTutoringApp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12777487"
+	},
+	"item": [
+		{
+			"name": "Students",
+			"item": [
+				{
+					"name": "Get Student By Email",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ota-basepath}}/students/get/{{email}}",
+							"host": [
+								"{{ota-basepath}}"
+							],
+							"path": [
+								"students",
+								"get",
+								"{{email}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Student By Email",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{ota-basepath}}/students/delete/{{email}}",
+							"host": [
+								"{{ota-basepath}}"
+							],
+							"path": [
+								"students",
+								"delete",
+								"{{email}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Student",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"anirudh.umarji@utdallas.edu\",\n    \"password\": \"anipass\",\n    \"fName\": \"Ani\",\n    \"lName\": \"Umarji\",\n    \"profilePic\": null,\n    \"aboutMe\": null,\n    \"year\": 4,\n    \"favouriteTutorIds\": [2, 7]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ota-basepath}}/students/update",
+							"host": [
+								"{{ota-basepath}}"
+							],
+							"path": [
+								"students",
+								"update"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Signup as Student",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"anirudh.umarji@utdallas.edu\",\n    \"password\": \"anipass\",\n    \"fName\": \"Ani\",\n    \"lName\": \"Umarji\",\n    \"tutor\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ota-basepath}}/auth/signup",
+							"host": [
+								"{{ota-basepath}}"
+							],
+							"path": [
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Signup as Tutor",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"sudeep.sab@gmail.com\",\n    \"password\": \"password\",\n    \"fName\": \"Suddep\",\n    \"lName\": \"Sab\",\n    \"tutor\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ota-basepath}}/auth/signup",
+							"host": [
+								"{{ota-basepath}}"
+							],
+							"path": [
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login Success",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"anirudh.umarji@utdallas.edu\",\n    \"password\": \"anipass\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ota-basepath}}/auth/login",
+							"host": [
+								"{{ota-basepath}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login Failure",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"anirudh.umarji@utdallas.edu\",\n    \"password\": \"wrongpass\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ota-basepath}}/auth/login",
+							"host": [
+								"{{ota-basepath}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tutors",
+			"item": [
+				{
+					"name": "Get All Tutors",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ota-basepath}}/tutors/get/all",
+							"host": [
+								"{{ota-basepath}}"
+							],
+							"path": [
+								"tutors",
+								"get",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Tutor By Email",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ota-basepath}}/tutors/get/{{email2}}",
+							"host": [
+								"{{ota-basepath}}"
+							],
+							"path": [
+								"tutors",
+								"get",
+								"{{email2}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Version",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{ota-basepath}}/version",
+					"host": [
+						"{{ota-basepath}}"
+					],
+					"path": [
+						"version"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "email",
+			"value": "anirudh.umarji@utdallas.edu"
+		},
+		{
+			"key": "email2",
+			"value": "sudeep.sab@gmail.com"
+		}
+	]
+}
