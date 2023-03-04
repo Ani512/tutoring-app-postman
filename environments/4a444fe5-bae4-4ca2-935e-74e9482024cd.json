@@ -4,7 +4,7 @@
   "values": [
     {
       "key": "ota-basepath",
-      "value": "https://backend-rest-api-service-dev.up.railway.app",
+      "value": "https://online-tutoring-backend-dev.up.railway.app",
       "enabled": true,
       "type": "default"
     }
