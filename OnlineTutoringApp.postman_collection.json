@@ -29,32 +29,13 @@
 					"response": []
 				},
 				{
-					"name": "Delete Student By Email",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "{{ota-basepath}}/students/delete/{{email}}",
-							"host": [
-								"{{ota-basepath}}"
-							],
-							"path": [
-								"students",
-								"delete",
-								"{{email}}"
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "Update Student",
 					"request": {
 						"method": "PUT",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"email\": \"anirudh.umarji@utdallas.edu\",\n    \"password\": \"anipass\",\n    \"fName\": \"Ani\",\n    \"lName\": \"Umarji\",\n    \"profilePic\": null,\n    \"aboutMe\": null,\n    \"year\": 4,\n    \"favouriteTutorIds\": [2, 7]\n}",
+							"raw": "{\n    \"email\": \"anirudh.umarji@utdallas.edu\",\n    \"year\": 4,\n    \"favouriteTutorIds\": [2, 7]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -192,6 +173,33 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Change Password",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"anirudh.umarji@utdallas.edu\",\n    \"password\": \"anipass\",\n    \"newPassword\": \"anipass\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ota-basepath}}/auth/change-password",
+							"host": [
+								"{{ota-basepath}}"
+							],
+							"path": [
+								"auth",
+								"change-password"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -231,6 +239,84 @@
 								"tutors",
 								"get",
 								"{{email2}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Tutors",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"sudeep.sab@gmail.com\",\n    \"subjects\": [\"Calculus\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ota-basepath}}/tutors/update",
+							"host": [
+								"{{ota-basepath}}"
+							],
+							"path": [
+								"tutors",
+								"update"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Delete Users By Email",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{ota-basepath}}/users/delete/{{email}}",
+							"host": [
+								"{{ota-basepath}}"
+							],
+							"path": [
+								"users",
+								"delete",
+								"{{email}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Profile",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"sudeep.sab@gmail.com\",\n    \"password\": \"password\",\n    \"totalHours\": 0,\n    \"profilePic\": null,\n    \"aboutMe\": \"My name is Sudip and I am a CS Major\",\n    \"fName\": \"Suddep\",\n    \"lName\": \"Sabbineni\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ota-basepath}}/users/update-profile",
+							"host": [
+								"{{ota-basepath}}"
+							],
+							"path": [
+								"users",
+								"update-profile"
 							]
 						}
 					},
